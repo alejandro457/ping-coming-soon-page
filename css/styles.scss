@@ -1,0 +1,267 @@
+$font-family: 'Libre Franklin', sans-serif;
+$light: 300;
+$semi: 600;
+$bold: 700;
+
+:root {
+    // Primary
+    --blue: hsl(223, 87%, 63%); // button and social links
+    // Secondary
+    --pale-blue: hsl(223, 100%, 88%); // input border, social links border
+    --light-red: hsl(354, 100%, 66%); // invalid input
+    // Neutral
+    --gray: hsl(0, 0%, 59%); // light text
+    --very-dark-blue: hsl(209, 33%, 12%); // dark text
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button {
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body,
+h1,
+p {
+    margin: 0;
+}
+
+body {
+    font-family: $font-family;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
+}
+
+%container {
+    max-width: 750px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.header {
+    @extend %container;
+    padding-top: 85px;
+    padding-bottom: 40px;
+    &__logo {
+        width: 55px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        padding-top: 90px;
+        padding-bottom: 50px;
+
+        &__logo {
+            width: 86px;
+        }
+    }
+}
+
+.main {
+    @extend %container;
+    padding-bottom: 50px;
+    font-size: 12px;
+    text-align: center;
+    color: var(--very-dark-blue);
+    &__title {
+        font-size: 22px;
+        font-weight: $bold;
+        margin-bottom: 20px;
+        &--light {
+            font-weight: $light;
+            color: var(--gray);
+        }
+    }
+    &__text {
+        font-weight: $light;
+        
+    }
+    &__form {
+        --email-h: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 34px;
+        margin-bottom: 64px;
+        display: grid;
+        gap: 10px;
+
+        &-email {
+            position: relative;
+
+           &::after {
+                content: var(--message);
+                margin-top: 5px;
+                margin-bottom: 15px;
+                font-size: 11px;
+                font-style: italic;
+                color: var(--light-red);
+                display: none;
+            }
+
+            &--invalid {
+                &::after {
+                    display: block;
+                }
+
+                > .main__form-input {
+                    border-color: var(--light-red);
+                }
+            }
+        }
+
+        &-input,
+        &-submit {
+            width: 100%;
+            height: var(--email-h);
+            border-radius: calc(var(--email-h) / 2);
+        }
+        &-input {
+            border: 1px solid var(--pale-blue);
+            color: var(--very-dark-blue);
+            padding-left: 30px;
+            padding-right: 30px;
+            &::placeholder {
+                color: var(--pale-blue);
+            }
+            &:focus {
+                border-color: var(--gray);
+            }
+        }
+        &-submit {
+            background-color: var(--blue);
+            border: none;
+            font-weight: $semi;
+            color: white;
+            padding-left: 60px;
+            padding-right: 60px;
+            box-shadow: 0 5px 15px var(--pale-blue);
+            &:focus {
+                outline: 2px dotted var(--blue);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 411px) {
+    .main {
+        font-size: 16px;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__form {
+            --email-h: 50px;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .main__form {
+        grid-template-columns: 1fr auto;
+        gap: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        font-size: 20px;
+
+        &__title {
+            font-size: 2.5em;
+        }
+
+        &__form {
+            --email-h: 60px;
+            padding: 0;
+            margin-top: 44px;
+            margin-bottom: 90px;
+
+            &-email {
+    
+               &::after {
+                    font-size: 13px;
+                    text-align: left;
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .main__form-submit:hover {
+        background-color: hsl(223, 87%, 68%);
+        cursor: pointer;
+    }
+}
+
+.footer {
+    @extend %container;
+    text-align: center;
+
+    &__social {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        &-link {
+            border: 1px solid var(--pale-blue);
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+
+            svg {
+                width: 15px;
+                fill: var(--blue);
+            }
+
+            &:hover {
+                background-color: var(--blue);
+                border-color: transparent;
+
+                svg {
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        color: var(--gray);
+        margin-bottom: 35px;
+
+        small {
+            font-size: 11px;
+        }
+    }
+}
