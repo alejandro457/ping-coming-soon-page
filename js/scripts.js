@@ -1,8 +1,8 @@
 ((d) => {
     const $form = d.getElementById('form');
     const $email = $form.querySelector('.main__form-input');
-
-    const REGEXP = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+    const REGEXP = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
 
     const messages = {
         empty: 'Whoops! It looks like you forgot to add your email',

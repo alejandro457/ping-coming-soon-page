@@ -23,6 +23,13 @@ img {
   display: block;
 }
 
+body,
+h1,
+p,
+ul {
+  margin: 0;
+}
+
 input,
 button {
   outline: none;
@@ -31,15 +38,8 @@ button {
 }
 
 ul {
-  margin: 0;
   padding: 0;
   list-style: none;
-}
-
-body,
-h1,
-p {
-  margin: 0;
 }
 
 body {
@@ -143,6 +143,7 @@ body {
 }
 
 .main__form-input {
+  background: none;
   border: 1px solid var(--pale-blue);
   color: var(--very-dark-blue);
   padding-left: 30px;
@@ -151,22 +152,26 @@ body {
 
 .main__form-input::-webkit-input-placeholder {
   color: var(--pale-blue);
+  opacity: 1;
 }
 
 .main__form-input:-ms-input-placeholder {
   color: var(--pale-blue);
+  opacity: 1;
 }
 
 .main__form-input::-ms-input-placeholder {
   color: var(--pale-blue);
+  opacity: 1;
 }
 
 .main__form-input::placeholder {
   color: var(--pale-blue);
+  opacity: 1;
 }
 
 .main__form-input:focus {
-  border-color: var(--gray);
+  border-color: var(--blue);
 }
 
 .main__form-submit {
@@ -257,7 +262,7 @@ body {
 }
 
 .footer__social-link svg {
-  width: 15px;
+  width: 17px;
   fill: var(--blue);
 }
 
@@ -276,6 +281,6 @@ body {
 }
 
 .footer__copyright small {
-  font-size: 11px;
+  font-size: 12px;
 }
 /*# sourceMappingURL=styles.css.map */
