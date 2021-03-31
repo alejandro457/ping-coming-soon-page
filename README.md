@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/mobile-first-page-using-bem-scss-and-js-Ow6jsWdgk)
-- Live Site URL: [Add live site URL here](https://alejandro457.github.io/ping-coming-soon-page/)
+- Solution URL: [https://www.frontendmentor.io/solutions/mobile-first-page-using-bem-scss-and-js-Ow6jsWdgk](https://www.frontendmentor.io/solutions/mobile-first-page-using-bem-scss-and-js-Ow6jsWdgk)
+- Live Site URL: [https://alejandro457.github.io/ping-coming-soon-page/](https://alejandro457.github.io/ping-coming-soon-page/)
 
 ## My process
 
